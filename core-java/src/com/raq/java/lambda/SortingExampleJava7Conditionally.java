@@ -65,6 +65,3 @@ public class SortingExampleJava7Conditionally {
 	
 }
 
-interface Condition{
-	boolean test(Person p);
-}

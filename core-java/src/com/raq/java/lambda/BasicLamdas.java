@@ -8,6 +8,9 @@ package com.raq.java.lambda;
  * The Java8 Compiler checks for the arguments
  * basically, compare the interface type, and parameters and provide implementation
  * Different than anonymous inner class
+ * 
+ * @Refer
+ * https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
  */
 public class BasicLamdas {
 	

@@ -3,10 +3,13 @@ package com.raq.java.lambda;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class SortingExampleJava8 {
-
+/*
+ * if have a labmda with no input arguments, and calling a method with no input agruments.
+ */
+public class MethodReferenceExample2 {
 	public static void main(String[] args) {
 		List<Person> people = Arrays.asList(
 				new Person("Abdul","Raafay",12),
@@ -18,30 +21,24 @@ public class SortingExampleJava8 {
 				);
 
 	
-
 	
-	Collections.sort(people, (p1,p2) -> p1.getFirstName().compareToIgnoreCase(p2.getFirstName()) );
+		//printConditionally(people, p -> true, p -> System.out.println(p));
 
-	//Step 2 : print all the names in the list
-	printConditionally(people, p -> true);
-
-	
-	//Step 3 : print all the names starting with M
-	printConditionally(people, p -> p.firstName.startsWith("M"));
+		//Method Refrerence replacing Sytem.out ( Class Name), method Name;
+		printConditionally(people, p -> true, System.out::println);
 
 	}
 	
 	
 	//Condition interface replaced with predicate from Java8 Examples
-	private static void printConditionally(List<Person> people, Condition condition) {
+	private static void printConditionally(List<Person> people, Predicate<Person> condition, Consumer<Person> consumer) {
 
 		for (Person p : people) {
 			if(condition.test(p)) {
-				System.out.println(p);
+				consumer.accept(p);
 			}
 		}
 
 	}
-	
-}
 
+}
