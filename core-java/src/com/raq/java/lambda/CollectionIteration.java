@@ -3,6 +3,10 @@ package com.raq.java.lambda;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * Java Stream allows us to iterate internally
+ * where the forLoops iterate externally
+ */
 public class CollectionIteration {
 
 	public static void main(String[] args) {
@@ -28,6 +32,7 @@ public class CollectionIteration {
 		
 		
 		System.out.println("Iteration using lambda for each loop ...");
+		//here were iterating internally, forEach works over a consumer, very powerful
 		people.forEach(p->System.out.print(p));
 		
 		System.out.println("Iteration using lambda for each loop method referecnce ...");
